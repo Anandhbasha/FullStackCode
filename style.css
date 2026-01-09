@@ -1,11 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+}
 #heading{
     background-color: blueviolet; 
     color: white;
 }
 .heading{
-    background-color: peru;
+    /* background-color: peru; */
     font-size: 30px;
     font-weight: 500;
     font-family:"Poppins", sans-serif;
+    /* margin: 10px 5px 60px 100px; */
+    margin-left: 100px;
+    padding: 10px 50px;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 5px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.btn{
+    margin-left: 200px;
+    margin-top: 100px;
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    
+}
+.btn:hover{
+    background-color: blueviolet;
+    border-radius: 15px;
+}
+.box{
+    margin-left: 150px;
+    width: 200px;
+    height: 200px;
+    /* background-color: aqua; */
+    border: 1px solid;
+    transition: 5s ease;
+    
+}
+
+.box:hover{
+    background: linear-gradient(rgba(147, 147, 166, 0.692),rgba(6, 30, 6, 0.443)),url(/images.jpg);
+    transition: 4s ease;
 }
