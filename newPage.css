@@ -1,0 +1,13 @@
+#table1{
+    border: 1px;
+    background-color: blue;
+}
+.table1{
+    background-color: red;
+}
+#table2{
+    background-color: purple;
+}
+.container{
+    margin: 100px;
+}
