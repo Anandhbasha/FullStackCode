@@ -1,0 +1,37 @@
+.navBar{
+    height: 8vh;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logoName >img{
+    width: 40px;
+    height: 40px;
+}
+.logoName{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 20px;
+}
+.navLink{
+    display: flex;
+    gap: 25px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 8px 15px;
+    margin: 15px;
+    border-radius: 15px;
+}
+a:hover{
+    background-color: purple;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    padding: 20px 50px;
+}
