@@ -1,0 +1,25 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* align-items: center; */
+}
+.header,.nav,.mainSection,.content1,.content2,.footer,.mainContent{
+    border: 2px solid black;
+    text-align: center;
+    height: 23vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContent{
+    flex-basis: 60vw;
+}
+.mainSection{
+    display: flex;
+    width: 100%;
+}
+.content2,.content1{
+    width: 20vw;
+}
