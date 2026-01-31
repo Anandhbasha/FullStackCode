@@ -7,73 +7,73 @@
     font-family: "Poppins", sans-serif;
     font-weight: 800;
 }
-#head1{
-    background-color: purple;
-    color: white;
-    font-size: 25px;
-    font-weight: 900;
+/* #head1{ */
+    /* background-color: purple; */
+    /* color: white; */
+    /* font-size: 25px; */
+    /* font-weight: 900; */
     /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    letter-spacing: 10px;
+    /* letter-spacing: 10px; */
     /* line-height: 105px; */
     /* padding: 15px 20px 10px 30px;
     margin: 15px 20px 10px 30px; */
-    width: 50vw;
+    /* width: 50vw;
     height: 80vh;
     border: 10px dashed red;
     border-radius: 50px 10px 100px 200px;
-    /* text-decoration: line-through; */
+     text-decoration: line-through; 
     text-transform: uppercase;
     word-spacing: 20px;
 
 }
 #head2{
     background-color: blue;
-}
-.head1{
+} */
+/* .head1{ */
     /* background-color: black;
     color: white; */
-}
+/* } */
 
-.box{
-    background-color: red ;
+/* .box{ */
+    /* background-color: red ;
     height: 100px;
-    width: 200px;
-    margin: 50px;
+    width: 200px; */
+    /* margin: 50px; */
     /* padding: 50px; */
     /* background: linear-gradient(#d9d2e9,rgba(0, 0, 0, 0)),url(./Image.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     /* overflow-x: hidden; */
-    opacity: 0.5;
+    /* opacity: 0.5; */
     /* visibility: hidden; */
     /* display: none; */
     /* margin-left: 1000px; */
-    float: right;
+    /* float: right; */
 
-}
+/* }
 /* .image{
     width: 100%;
     height: 100%;
-} */
+} 
 
 .nav{
     background-color: red;
     height: 8vh;
     width: 100%;
     /* position: fixed; */
-    position: sticky;
+    /* position: sticky;
     top: 0;
     left: 0;
     margin-top: 100px;
-}
-p{
+}  */
+/* p{
     margin-top: 70px;
-}
-.box1{
+} */
+/* .box1{
     background-color: palevioletred;
     width: 200px;
     height: 200px;
-    /* position: relative; */
+     position: relative; 
 }
 .box2{
     background-color: aqua;
@@ -82,7 +82,7 @@ p{
     position: absolute;
     top: 20px;
     left: 20px;
-}
+} */
 
 /* pseudo elements
 hover
@@ -95,19 +95,19 @@ firstline
 selection
 placeholder */
 
-.newBox{
+/* .newBox{ */
     /* display: flex; */
-    gap: 20px;
-}
-.newBox1{
+    /* gap: 20px; */
+/* } */
+/* .newBox1{
     width: 300px;
     height: 300px;
     background-color: black;
 }
-/* .newBox1:hover{
+ .newBox1:hover{
     background-color: #00ff99;
 }
-.newBox1:first-child{
+.newBox1:last-child{
     width: 300px;
     height: 300px;
     background-color: rgb(247, 0, 0);
@@ -116,7 +116,7 @@ placeholder */
     background-color: pink;
     height: 200px;
     width: 200px;
-} */
+}
 
 .newBox::before{
     content: "Hello Welcome";
@@ -142,7 +142,7 @@ a::before{
     content: "";
     left: 0;
     top: -10px;
-    width: 0;
+    width: 0%;
     transition: 3s ease;
 }
 a:hover::before{
@@ -154,7 +154,28 @@ a::first-letter{
 #para::selection{
     background-color: yellow;
     
+} */
+.text::placeholder{
+    /* background-color: steelblue;
+    color: black;
+    opacity: .8; */
+    /* padding: 15px 20px !important; */
 }
-input::placeholder{
-    background-color: steelblue;
-}
+
+ /* .box1{
+    width: 500px;
+    height: 400px;
+    background-color: rebeccapurple;
+    box-shadow: inset 5px 10px 3px 12px gray;
+}  */
+/* .box{ 
+    width: 300px;
+    height: 300px;
+    background-color: peachpuff;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+ /* h1{
+    text-shadow: 2px 3px seagreen;
+ } */
