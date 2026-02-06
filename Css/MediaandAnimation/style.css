@@ -1,0 +1,68 @@
+.nav{
+    background-color: palevioletred;
+    height: 8vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: 800;
+    padding: 2%;
+}
+.line{
+    border: 2px solid black;
+    width: 20px;
+    margin-bottom: 5px;
+}
+.hamBurgerMenu{
+    padding-right: 2%;
+    display: none;
+}
+@media (max-width:600px) {
+    .navLinks{
+        display: none;
+    }
+    .hamBurgerMenu{
+        display: block;
+    }
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition: 4s ease;
+    animation: bgchange 4s ease infinite;
+}
+.box:hover{
+    /* transform: translateY(50px); */
+    /* transform: rotate(25deg); */
+    /* transform: scale(1.2);
+    transition: 4s ease; */
+}
+
+@keyframes bgchange {
+    0%{
+        background-color: red;
+    }
+    25%{
+        background-color: aqua;
+    }
+    50%{
+        background-color: yellow;
+    }
+    75%{
+        background-color: black;
+    }
+    100%{
+        background-color: blue;
+    }
+}
