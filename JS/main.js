@@ -250,46 +250,94 @@
 
 
 // //loops
-//     //while
-//     // let a =10
-//     // while(a>0){ //11-> upto 
-//     //     console.log(a); //0        
-//     //     a-- //1
-//     // }
-//     let a=0
-//     while(a<=10){
-//         if(a%2!=0){
-//             console.log(a);            
-//         }
-//         a++
-//     }
-//     // array access
-//     let arr = [50,60,70,80,90]
+// //     //while
+// //     // let a =10
+// //     // while(a>0){ //11-> upto 
+// //     //     console.log(a); //0        
+// //     //     a-- //1
+// //     // }
+// //     let a=0
+// //     while(a<=10){
+// //         if(a%2!=0){
+// //             console.log(a);            
+// //         }
+// //         a++
+// //     }
+// //     // array access
+// //     let arr = [50,60,70,80,90]
     
-//     let b=0 //5
-//     while(b<arr.length){
-//         console.log(arr[b]); //arr[0] arr[1] arr[2]
-//         b++
-//     }
-//     // do while
-//     do{
-//         console.log("Do while is working");
+// //     let b=0 //5
+// //     while(b<arr.length){
+// //         console.log(arr[b]); //arr[0] arr[1] arr[2]
+// //         b++
+// //     }
+// //     // do while
+// //     do{
+// //         console.log("Do while is working");
         
-//     }while(10<5)
-//     //for
-let arr = [50,60,70,80,90]
-let user = "Bala"
-for(let x=user.length-1;x>=0;x--){
-    console.log(user[x]);
+// //     }while(10<5)
+// //     //for
+// let arr = [50,60,70,80,90]
+// let user = "Bala"
+// for(let x=user.length-1;x>=0;x--){
+//     console.log(user[x]);
     
-}
+// }
 
-// B
-// Ba
-// Bal
-// Bala
+// // B
+// // Ba
+// // Bal
+// // Bala
 
-//    *
-//   ***
-//  *****
-// *******
+// //    *
+// //   ***
+// //  *****
+// // *******
+
+// let rows = 4;
+
+// for (let i = 1; i <= rows; i++) {  //2<=4
+
+//     let spaces = "";
+//     let stars = "";
+
+//     // Spaces
+//     for (let j = 1; j <= rows - i; j++) { //1<4-2 i<2
+//         spaces += " ";                                     
+//     }
+//     // Stars 
+//     for (let k = 1; k <= (2 * i - 1); k++) {  //2*4-1 = 7
+//         stars += "*";
+//     }
+
+//     console.log(spaces + stars);  
+// }
+
+//   *
+//  ***
+// *****
+//******* 
+
+
+//4
+
+// types of for loop
+// for of
+let arr1 = [10,20,30,40]
+// ES6 concept
+// for(let x of arr1){ //10 20 30 40
+//     console.log(x);    
+// }
+// // for in 
+// for(let x in arr1){ //0 1 2 3
+//     console.log(arr1[x]);    
+// }
+// foreach
+// arr1.forEach((x)=>console.log(x))
+
+// array methods
+
+// arr1.map((x)=>console.log(x+2))
+
+//10+20+30+40 = 100
+//odd even 
