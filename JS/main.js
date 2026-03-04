@@ -470,35 +470,35 @@
 
 // any
 
-const friend1 = new Promise((resolved,reject)=>{
-    let reached1 = true
-    if(reached1){
-        resolved("Friend1 Reached Home")
-    }
-    else{
-        reject("Friend1 Not yet Reached")
-    }
-})
-const friend2 = new Promise((resolved,reject)=>{
-    let reached2 = false
-    if(reached2){
-        resolved("Friend2 Reached Home")
-    }
-    else{
-        reject("Friend2 Not yet Reached")
-    }
-})
-const friend3 = new Promise((resolved,reject)=>{
-    setTimeout(()=>{
-        let reached3 = false
-        if(reached3){
-            resolved("Friend3 Reached Home")
-        }
-        else{
-            reject("Friend3 Not yet Reached")
-        }
-    },5000)
-})
+// const friend1 = new Promise((resolved,reject)=>{
+//     let reached1 = true
+//     if(reached1){
+//         resolved("Friend1 Reached Home")
+//     }
+//     else{
+//         reject("Friend1 Not yet Reached")
+//     }
+// })
+// const friend2 = new Promise((resolved,reject)=>{
+//     let reached2 = false
+//     if(reached2){
+//         resolved("Friend2 Reached Home")
+//     }
+//     else{
+//         reject("Friend2 Not yet Reached")
+//     }
+// })
+// const friend3 = new Promise((resolved,reject)=>{
+//     setTimeout(()=>{
+//         let reached3 = false
+//         if(reached3){
+//             resolved("Friend3 Reached Home")
+//         }
+//         else{
+//        https://fakestoreapi.com/products     reject("Friend3 Not yet Reached")
+//         }
+//     },5000)
+// })
 
 // Promise.any([friend1,friend2,friend3]).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
 // race
@@ -508,4 +508,107 @@ const friend3 = new Promise((resolved,reject)=>{
 // Promise.all([friend1,friend2,friend3]).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
 
 //allSettled
-Promise.allSettled([friend1,friend2,friend3]).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
+// Promise.allSettled([friend1,friend2,friend3]).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
+
+
+// get method
+
+// const getData = new Promise((resolved,reject)=>{
+//     fetch(`https://fakestoreapi.com/products/1`).then((res)=>{
+//         if(res.ok){
+//             resolved(res.json())
+//         }
+//         else{
+//             reject("Unable to Connect API")
+//         }
+//     })
+// })
+
+// getData.then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+
+
+// post data 
+// const getData = new Promise((resolved,reject)=>{
+//     fetch(`https://fakestoreapi.com/products/`,{
+//         method:"POST",
+//         headers:{
+//             "Content-Type":"application/json"
+//         },
+//         body:JSON.stringify({
+
+//             title:"Test Product",
+//             price:500
+//         })
+//     }).then((res)=>{
+//         if(res.ok){
+//             resolved(res.json())
+//         }
+//         else{
+//             reject("Unable to Connect API")
+//         }
+//     })
+// })
+
+// getData.then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+
+// put Data
+
+// const getData = new Promise((resolved,reject)=>{
+//     fetch(`https://fakestoreapi.com/products/1`,{
+//         method:"PUT",
+//         headers:{
+//             "Content-Type":"application/json"
+//         },
+//         body:JSON.stringify({
+
+//             title:"Update Product",
+//             price:999
+//         })
+//     }).then((res)=>{
+//         if(res.ok){
+//             resolved(res.json())
+//         }
+//         else{
+//             reject("Unable to Connect API")
+//         }
+//     })
+// })
+
+// getData.then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+
+
+// Delete data
+// const getData = new Promise((resolved,reject)=>{
+//     fetch(`https://fakestoreapi.com/products/1`,{
+//         method:"DELETE"
+//     }).then((res)=>{
+//         if(res.ok){
+//             resolved("Product Deleted Succesfully")
+//         }
+//         else{
+//             reject("Unable to Connect API")
+//         }
+//     })
+// })
+
+// getData.then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+
+
+// async
+
+const fetchData = async()=>{
+    const res = await fetch(`https://fakestoreapi.com/products`)
+    if(res.ok){
+        const data = await res.json()
+        console.log(data);
+        
+    }
+    else{
+        console.log("Unable to connect API");
+        
+    }
+}
+
+fetchData()
+
+
