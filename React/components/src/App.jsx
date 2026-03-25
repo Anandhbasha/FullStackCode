@@ -1,22 +1,28 @@
 import Button from "./Button"
 
+// const App = ()=>{
+//   const value = ["Click","Login","Logout","Save","Edit","Delete"]
+//     return (
+//       <div>
+//         {value.map((item)=>(
+//           <Button value = {item}/>
+//         ))}       
+//       </div>
+//     )
+// }
+
 const App = ()=>{
+  const value = ["Click","Login","Logout","Save","Edit","Delete"]
     return (
       <div>
-        <h1>Hello Welcome</h1>
-        <h2>This Is React</h2>
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
+        {value.map((item)=>(
+          <Button x = {item}/>
+        ))}       
       </div>
     )
 }
+
+// x=Click
 
 export default App
 
