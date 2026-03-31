@@ -1,0 +1,11 @@
+.Videos{
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    border-radius: 35px;
+}
+.videoBox{
+    width: 100%;
+    height: 60%;
+    background-color: black;
+}
