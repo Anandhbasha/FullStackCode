@@ -1,11 +1,46 @@
 .Videos{
-    height: 350px;
+    height: 500px;
     width: 350px;
     background-color: white;
     border-radius: 35px;
 }
 .videoBox{
     width: 100%;
-    height: 60%;
+    height: 70%;
     background-color: black;
+}
+.topBar{
+    display: flex;
+    justify-content:flex-start;
+    gap: 20px;
+}
+.LengthVideo{
+    display: flex;
+    gap: 15px;
+}
+.searchbar >input ::placeholder{
+    opacity: .8;
+    font-weight: 600;
+    font-size: 1.2em;
+    background-color: wheat;
+}
+
+.searchbar{
+    display: flex;
+    gap: 10px;
+}
+.rightSide{
+    display: flex;
+    justify-content: space-around;
+}
+
+.topFixed{
+    width: 100%;
+    position: fixed;
+    top: 0vh;
+    background-color: #16171d;
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
