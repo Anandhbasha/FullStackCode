@@ -1,210 +1,181 @@
-Alright — “all MongoDB queries” nu full-ah cover panna try pannaa romba huge aagum 😄
-So naan unakku **complete practical cheat sheet** maari, **CRUD + advanced queries** ellam clean-a explain panren. Idhu real-world use ku perfect 💯
+1. CREATE (Insert)
 
----
+Insert one document
 
-# 🔥 1. CREATE (Insert)
-
-### ➤ Insert one document
-
-```js
 db.users.insertOne({
   name: "Anand",
   age: 25,
   city: "Chennai"
 })
-```
 
-### ➤ Insert multiple documents
 
-```js
+Insert multiple documents
+
 db.users.insertMany([
   { name: "Raj", age: 30 },
   { name: "Priya", age: 22 }
 ])
-```
 
----
 
-# 🔍 2. READ (Find Queries)
 
-### ➤ Get all documents
 
-```js
+2. READ (Find Queries)
+
+Get all documents
+
 db.users.find()
-```
 
-### ➤ Pretty format
 
-```js
+Pretty format
+
 db.users.find().pretty()
-```
 
-### ➤ Condition
 
-```js
+Condition
+
 db.users.find({ age: 25 })
-```
 
-### ➤ Multiple conditions
 
-```js
+Multiple conditions
+
 db.users.find({ age: 25, city: "Chennai" })
-```
 
----
 
-# ⚡ Operators (Very Important)
 
-### ➤ Greater than / Less than
 
-```js
+Operators (Very Important)
+
+Greater than / Less than
+
 db.users.find({ age: { $gt: 20 } })   // >
 db.users.find({ age: { $lt: 30 } })   // <
-```
 
-### ➤ Greater than equal / Less than equal
 
-```js
+Greater than equal / Less than equal
+
 db.users.find({ age: { $gte: 25 } })
 db.users.find({ age: { $lte: 30 } })
-```
 
-### ➤ Not equal
 
-```js
+Not equal
+
 db.users.find({ age: { $ne: 25 } })
-```
 
-### ➤ AND
 
-```js
+AND
+
 db.users.find({
   $and: [
     { age: 25 },
     { city: "Chennai" }
   ]
 })
-```
 
-### ➤ OR
 
-```js
+OR
+
 db.users.find({
   $or: [
     { age: 25 },
     { city: "Mumbai" }
   ]
 })
-```
 
----
 
-# 🎯 Projection (Select specific fields)
 
-```js
+
+Projection (Select specific fields)
+
 db.users.find({}, { name: 1, age: 1 })
-```
 
-👉 `_id` remove panna:
 
-```js
+ _id remove panna:
+
 db.users.find({}, { name: 1, _id: 0 })
-```
 
----
 
-# 🔄 3. UPDATE
 
-### ➤ Update one
 
-```js
+3. UPDATE
+
+Update one
+
 db.users.updateOne(
   { name: "Anand" },
   { $set: { age: 26 } }
 )
-```
 
-### ➤ Update many
 
-```js
+Update many
+
 db.users.updateMany(
   { city: "Chennai" },
   { $set: { country: "India" } }
 )
-```
 
-### ➤ Increment value
 
-```js
+Increment value
+
 db.users.updateOne(
   { name: "Anand" },
   { $inc: { age: 1 } }
 )
-```
 
----
 
-# ❌ 4. DELETE
 
-### ➤ Delete one
 
-```js
+ 4. DELETE
+
+Delete one
+
 db.users.deleteOne({ name: "Anand" })
-```
 
-### ➤ Delete many
 
-```js
+Delete many
+
 db.users.deleteMany({ age: { $lt: 20 } })
-```
 
----
 
-# 📊 5. SORT, LIMIT, SKIP
 
-### ➤ Sort
 
-```js
+5. SORT, LIMIT, SKIP
+
+Sort
+
 db.users.find().sort({ age: 1 })   // ascending
 db.users.find().sort({ age: -1 })  // descending
-```
 
-### ➤ Limit
 
-```js
+Limit
+
 db.users.find().limit(5)
-```
 
-### ➤ Skip (pagination)
 
-```js
+Skip (pagination)
+
 db.users.find().skip(5).limit(5)
-```
 
----
 
-# 🔥 6. COUNT
 
-```js
+
+6. COUNT
+
 db.users.countDocuments({ age: { $gt: 20 } })
-```
 
----
 
-# 🧠 7. DISTINCT
 
-```js
+
+ 7. DISTINCT
+
 db.users.distinct("city")
-```
 
----
 
-# ⚙️ 8. AGGREGATION (Advanced 🔥)
 
-### ➤ Group by
 
-```js
+8. AGGREGATION (Advanced )
+
+Group by
+
 db.users.aggregate([
   {
     $group: {
@@ -213,11 +184,10 @@ db.users.aggregate([
     }
   }
 ])
-```
 
-### ➤ Match + Group
 
-```js
+Match + Group
+
 db.users.aggregate([
   { $match: { age: { $gt: 20 } } },
   {
@@ -227,235 +197,211 @@ db.users.aggregate([
     }
   }
 ])
-```
 
----
 
-# 🔎 9. TEXT SEARCH
 
-```js
+
+ 9. TEXT SEARCH
+
 db.users.find({
   name: { $regex: "An", $options: "i" }
 })
-```
 
----
 
-# 🧩 10. ARRAY QUERIES
 
-```js
+
+10. ARRAY QUERIES
+
 db.users.find({ skills: "Java" })
-```
 
-```js
+
 db.users.find({
   skills: { $in: ["Java", "Python"] }
 })
-```
-
----
-
-# 🚀 REAL WORLD TIP
-
-👉 Most used queries in real projects:
-
-* `find()` with conditions
-* `$set`, `$inc` updates
-* `aggregate()` (reports)
-* `sort + limit` (pagination)
 
 
-Correct da — nee already basic CRUD cover pannita 👍
-Ippo **“balanced MongoDB queries”** na meaning 👉 *real-world + slightly advanced + rarely used but powerful queries*
-Idhu thaan interview & project la difference create pannum 🔥
 
----
 
-# ⚖️ BALANCED / INTERMEDIATE MONGODB QUERIES
+ REAL WORLD TIP
 
-## 🧠 1. `$exists` (field iruka check)
+ Most used queries in real projects:
 
-```js
+* find() with conditions
+* $set, $inc updates
+* aggregate() (reports)
+* sort + limit (pagination)
+
+
+
+
+
+BALANCED / INTERMEDIATE MONGODB QUERIES
+
+ 1. $exists (field iruka check)
+
 db.users.find({
   phone: { $exists: true }
 })
-```
 
-👉 Real use: optional fields validate panna
 
----
+ Real use: optional fields validate panna
 
-## 🧠 2. `$type` (data type check)
 
-```js
+
+ 2. $type (data type check)
+
 db.users.find({
   age: { $type: "int" }
 })
-```
 
-👉 Data consistency check 🔥
 
----
+ Data consistency check 
 
-## 🧠 3. `$size` (array length)
 
-```js
+
+ 3. $size (array length)
+
 db.users.find({
   skills: { $size: 2 }
 })
-```
 
-👉 Exact 2 skills irukura users
 
----
+ Exact 2 skills irukura users
 
-## 🧠 4. `$all` (array la ellam irukanum)
 
-```js
+
+ 4. $all (array la ellam irukanum)
+
 db.users.find({
   skills: { $all: ["Java", "MongoDB"] }
 })
-```
 
-👉 Must have both skills
 
----
+ Must have both skills
 
-## 🧠 5. `$elemMatch` (complex array object)
 
-```js
+
+ 5. $elemMatch (complex array object)
+
 db.users.find({
   marks: {
     $elemMatch: { subject: "Math", score: { $gt: 80 } }
   }
 })
-```
 
-👉 Nested array filtering 🔥
 
----
+ Nested array filtering 
 
-## 🧠 6. `$not` (reverse condition)
 
-```js
+
+ 6. $not (reverse condition)
+
 db.users.find({
   age: { $not: { $gt: 30 } }
 })
-```
 
----
 
-## 🧠 7. `$nor` (none match)
 
-```js
+
+ 7. $nor (none match)
+
 db.users.find({
   $nor: [
     { age: 25 },
     { city: "Chennai" }
   ]
 })
-```
 
----
 
-## 🧠 8. `$expr` (field vs field comparison)
 
-```js
+
+ 8. $expr (field vs field comparison)
+
 db.users.find({
   $expr: { $gt: ["$salary", "$bonus"] }
 })
-```
 
-👉 Same document la compare panna 🔥
 
----
+ Same document la compare panna 
 
-## 🧠 9. `$regex` advanced search
 
-```js
+
+ 9. $regex advanced search
+
 db.users.find({
   name: { $regex: "^A", $options: "i" }
 })
-```
 
-👉 Starts with A (case insensitive)
 
----
+ Starts with A (case insensitive)
 
-## 🧠 10. `$in` vs `$nin`
 
-```js
+
+ 10. $in vs $nin
+
 db.users.find({ city: { $in: ["Chennai", "Mumbai"] } })
 
 db.users.find({ city: { $nin: ["Delhi"] } })
-```
 
----
 
-# ⚙️ UPDATE ADVANCED
 
-## 🧠 11. `$unset` (remove field)
 
-```js
+UPDATE ADVANCED
+
+ 11. $unset (remove field)
+
 db.users.updateOne(
   { name: "Anand" },
   { $unset: { phone: "" } }
 )
-```
 
----
 
-## 🧠 12. `$rename`
 
-```js
+
+ 12. $rename
+
 db.users.updateMany(
   {},
   { $rename: { "name": "fullName" } }
 )
-```
 
----
 
-## 🧠 13. `$push` (add to array)
 
-```js
+
+ 13. $push (add to array)
+
 db.users.updateOne(
   { name: "Anand" },
   { $push: { skills: "React" } }
 )
-```
 
----
 
-## 🧠 14. `$addToSet` (duplicate avoid)
 
-```js
+
+ 14. $addToSet (duplicate avoid)
+
 db.users.updateOne(
   { name: "Anand" },
   { $addToSet: { skills: "React" } }
 )
-```
 
-👉 Duplicate varadhu 🔥
 
----
+Duplicate 
 
-## 🧠 15. `$pull` (remove from array)
+$pull (remove from array)
 
-```js
 db.users.updateOne(
   { name: "Anand" },
   { $pull: { skills: "Java" } }
 )
-```
 
----
 
-# 🔥 AGGREGATION (REAL POWER)
 
-## 🧠 16. `$project`
 
-```js
+AGGREGATION (REAL POWER)
+
+ 16. $project
+
 db.users.aggregate([
   {
     $project: {
@@ -465,26 +411,24 @@ db.users.aggregate([
     }
   }
 ])
-```
 
----
 
-## 🧠 17. `$sort + $limit`
 
-```js
+
+ 17. $sort + $limit
+
 db.users.aggregate([
   { $sort: { age: -1 } },
   { $limit: 3 }
 ])
-```
 
-👉 Top 3 oldest users
 
----
+ Top 3 oldest users
 
-## 🧠 18. `$lookup` (JOIN 🔥)
 
-```js
+
+ 18. $lookup (JOIN )
+
 db.orders.aggregate([
   {
     $lookup: {
@@ -495,27 +439,25 @@ db.orders.aggregate([
     }
   }
 ])
-```
 
-👉 SQL JOIN equivalent 💯
 
----
+ SQL JOIN equivalent
 
-## 🧠 19. `$unwind`
 
-```js
+
+ 19. $unwind
+
 db.users.aggregate([
   { $unwind: "$skills" }
 ])
-```
 
-👉 Array split pannum
 
----
+ Array split pannum
 
-## 🧠 20. `$group with sum`
 
-```js
+
+ 20. $group with sum
+
 db.orders.aggregate([
   {
     $group: {
@@ -524,35 +466,32 @@ db.orders.aggregate([
     }
   }
 ])
-```
 
----
 
-# 🎯 BONUS (PRO LEVEL 🔥)
 
-## 🧠 21. Pagination (real-world)
 
-```js
+BONUS (PRO LEVEL )
+
+ 21. Pagination (real-world)
+
 db.users.find()
   .skip( (page - 1) * limit )
   .limit(limit)
-```
 
----
 
-## 🧠 22. Case insensitive exact match
 
-```js
+
+ 22. Case insensitive exact match
+
 db.users.find({
   name: { $regex: "^anand$", $options: "i" }
 })
-```
 
----
 
-## 🧠 23. Find duplicate values
 
-```js
+
+ 23. Find duplicate values
+
 db.users.aggregate([
   {
     $group: {
