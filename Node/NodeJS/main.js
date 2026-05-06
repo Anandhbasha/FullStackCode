@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 const PORT = 4820;
-
+// npm i cors
 app.use(cors({
   origin:"http://localhost:5173",
   methods:["GET","POST","PUT","DELETE"],

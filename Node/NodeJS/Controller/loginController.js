@@ -1,6 +1,8 @@
 import student from "../Model/crudSchema.js"
 import bcrypt from "bcryptjs"
 
+// npm install bcryptjs
+
 export const registerUser = async(req,res)=>{
     try{
         const {name,email,age,password} = req.body
@@ -11,8 +13,8 @@ export const registerUser = async(req,res)=>{
         else{
             const Salt = await bcrypt.genSalt(10)
             const hassedPassword = await bcrypt.hash(password,Salt)
-            const inserNewuser = await student({name:name,email:email,age:age,password:hassedPassword}).save()
-            return res.status(201).json("New user Addes succesfully")
+            const insertNewuser = await student({name:name,email:email,age:age,password:hassedPassword}).save()
+            return res.status(201).json("New user Added succesfully","Newuser:"+insertNewuser)
         }
     }catch(err){
         return res.status(404).json("Unable to add New user")
