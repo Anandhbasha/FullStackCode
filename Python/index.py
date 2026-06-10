@@ -54,5 +54,106 @@
 # print(20 in list1)
 
 # tenary
-age=18
-print(age>=18 if "Eligible" else "not Eligible")
+# age=18
+# print(age>=18 if "Eligible" else "not Eligible")
+
+# conditional statments
+# if
+# if else
+# elif
+
+# if condtiion:
+#     # block
+
+# temp = int(input("Enter the Temperature:"))
+
+# if temp >32:
+#     print("Switch on the AC")
+# elif temp<20:
+#     print("Switch off the AC and Fan")
+# else:
+#     print("Switch on the Fan")
+
+
+# looping statement
+# for
+# for i in value:
+    # block
+
+# for i in range(5):
+#     print(i)
+
+# 0
+# 1
+# 2
+# 3
+# 4
+# for i in range(1,5):
+#     print(i)
+
+# for i in range(1,10,3):
+#     print(i)
+
+# list = ["apple","orange","banana","kiwi"]
+# # for i in range(0,len(list)):
+# #     print(list[i])
+
+# for i in list:
+#     print(i)
+
+
+#   *
+#  ***
+# *****
+#*******
+
+# row = int(input("Enter thennumber of Rows:"))
+
+# for i in range(1,row):
+#     print(" "*(row-i)+"*"*(2*i-1))
+
+#     *
+#    ***
+#   *****
+#  *******
+# # while
+# while condition:
+
+# oops
+# car1Name = "swift"
+# car1Color = "white"
+# car1NoofWheels = 4
+# car1NofMirror = 2
+
+# def acc():
+#     print("Car1 is moving")
+# def breaks():
+#     print("Car1 is Stopped")
+
+
+# car2Name = "swift"
+# car2Color = "red"
+# car2NoofWheels = 4
+# car2NofMirror = 2
+
+# def acc():
+#     print("Car2 is moving")
+# def breaks():
+#     print("Car2 is Stopped")
+
+
+class Car:
+    carName = "swift"
+    carColor = "red"
+    carNoofWheels = 4
+    carNofMirror = 2
+
+    def acc():
+        print("Car is moving")
+    def breaks():
+        print("Car is Stopped")
+
+c1 = Car()
+print(c1.carColor)
+c1.carColor = "white"
+print(c1.carColor)
