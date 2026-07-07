@@ -13,3 +13,20 @@ def getStudent():
         student["_id"] = str(student["_id"])
         students.append(student)
         return jsonify(students)
+
+# put
+def update_students(id):
+    data = request.get_json()
+    res = collection.update_one({"_id:ObjectId(id)"},{"$set":data})
+
+    if res.modified_count>0:
+        return jsonify({"message":"Student Updtated Succesfully"})
+    return jsonify({"message":"Unable to Updtate"})
+
+# Delete
+def deleteStu(id):
+    data = request.get_json()
+    res = collection.delete_one({"_id:ObejectId(id)"})
+    if res.deleted_count_count>0:
+        return jsonify({"message":"Student Deleted Succesfully"})
+    return jsonify({"message":"Unable to Deleted"})
