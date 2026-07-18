@@ -39,14 +39,14 @@ a{
     width: 200px;
     height: 200px;
     background-color: red;
-    transition: 4s ease;
+    /* transition: 4s ease; */
     animation: bgchange 4s ease infinite;
 }
 .box:hover{
-    /* transform: translateY(50px); */
+    /* transform: translate(50px,100px); */
     /* transform: rotate(25deg); */
-    /* transform: scale(1.2);
-    transition: 4s ease; */
+    /* transform: scale(1.5); */
+    /* transition: 4s ease;  */
 }
 
 @keyframes bgchange {
